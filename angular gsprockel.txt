@@ -1,0 +1,57 @@
+Instalar
+- npm install -g @angular/cli
+
+Crear proyecto
+- ng new my-app
+
+Correr proyecto
+- cd my-app
+- ng serve --open
+
+Instalar paquete bootstrap
+- npm install bootstrap@next popper.js jquery @fortawesome/fontawesome-free bootswatch
+
+- verificar => packaje.json
+
+- habilitar estilos => angular.json
+	"styles": [
+              "src/styles.css",
+              "./node_modules/bootswatch/dist/darkly/bootstrap.min.css",
+              "./node_modules/@fortawesome/fontawesome-free/js/all.js",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+
+Interaccion entre fomulario y typescript
+- src => app.module.ts
+	@NgModule({
+  		declarations: [
+   			..
+  		],
+  		imports: [
+    			..,
+   			 FormsModule
+  			],
+  		..
+		})
+
+- implementar OnInit (Todo lo q se escriba dentro de ngOnInit se ejecuta antes de todo)
+	=>app.components.ts
+	import { Component, OnInit } from '@angular/core';
+
+	@Component({
+  		selector: 'app-root',
+  		templateUrl: './app.component.html',
+  		styleUrls: ['./app.component.css']
+		})
+	export class AppComponent implements OnInit {
+  		title = 'gsprockel-app';
+
+  		ngOnInit(){
+  			}
+		}
+
